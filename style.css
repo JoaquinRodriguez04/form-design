@@ -1,0 +1,224 @@
+/* importando la fuente de familia */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* creando las variables */
+:root{
+    --bg-app: #F5F2EB;
+    --bg-primary: #AED6B3;
+    --bg-primary-hover: #80b186;
+    --clr-text-primary: #111;
+    --clr-text-secondary: #797979;
+    --bg-light-form: #fff;
+    --padd-boxs: .65em 2em;
+    --text-hover: #AED6B3;
+    --bg-btn-secondary-hover: #e1dada5c;
+    --bg-input-hover: #e1dada5c;
+    --bg-input-focus: #a9a3a35c;
+}
+
+/* normalizando */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color: var(--bg-app);
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1em;
+    padding: 2em 7em;
+}
+
+:is(.btnPrimary, .btnSecondary, .btnTerciary){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .6em;
+    padding: var(--padd-boxs);
+    font-weight: 600;
+}
+
+.btnPrimary{
+    border: none;
+    background-color: var(--bg-primary);
+    border-radius: 4px;
+}
+
+.btnPrimary:hover{
+    background-color: var(--bg-primary-hover);
+    cursor: pointer;
+}
+
+.btnSecondary{
+    background-color: transparent;
+    border: 1px solid var(--clr-text-primary);
+    border-radius: 40px;
+}
+
+.btnSecondary:hover{
+    background-color: var(--bg-btn-secondary-hover);
+    cursor: pointer;
+}
+
+.btnTerciary{
+    background-color: transparent;
+    border: none;
+}
+
+.btnTerciary:hover{
+    color: var(--text-hover);
+    cursor: pointer;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5em;
+    padding: var(--padd-grl);
+    padding: 2em 7em;
+    height: 70vh;
+    margin-top: 1em;
+}
+
+.formLoginContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    background-color: var(--bg-light-form);
+    padding: 2.5em 4em;
+    border-radius: 2em;
+    width: 100%;
+}
+
+.heyClr{
+    color: var(--bg-primary);
+    font-weight: 500;
+}
+
+.formLoginMobile{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.formActionsWrapper{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+}
+
+:is(.formActionsTop, .formActionsBottom){
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: .8em;
+}
+
+.formActsInput{
+    padding: var(--padd-boxs);
+    border-radius: .5em;
+    border: 1px solid var(--clr-text-secondary);
+    outline: none;
+    width: 100%;
+}
+
+.formActsInput:hover{
+    background-color: var(--bg-input-hover);
+    cursor: pointer;
+}
+
+.formActsInput:focus{
+    background-color: var(--bg-input-focus);
+}
+
+.orSignContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.2em;
+}
+
+.orSignIn{
+    text-align: center;
+    color: var(--clr-text-secondary);
+}
+
+.btnActionsWrapper{
+    display: flex;
+    flex-wrap: wrap;
+    gap: .65em;
+}
+
+.notAccYet{
+    color: var(--clr-text-secondary);
+}
+
+.notAccYet > a{
+    color: var(--clr-text-primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.notAccYet > a:hover{
+    color: var(--text-hover);
+}
+
+@media screen and (max-width:1350px) {
+    .imgLoginWrapper{
+        display: none;
+    }
+
+    .formLoginMobile{
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 5em;
+    }
+
+    .formActionsWrapper{
+        justify-content: space-between;
+    }
+
+    :is(.formActionsTop, .formActionsBottom){
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: .65em;
+    }
+
+    .formActionsBottom{
+        flex-direction: column;
+    }
+
+    .btnActionsWrapper{
+        flex-direction: column;
+    }
+
+}
+
+@media screen and (max-width:1250px) {
+    :is(.navbar, .content){
+        padding-inline: 5em;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .formLoginMobile{
+        flex-direction: column;
+    }
+
+    .formLoginContainer{
+        padding: 2em;
+    }
+
+    .btnActionsWrapper{
+        flex-direction: row;
+        justify-content: center;
+    }
+}
